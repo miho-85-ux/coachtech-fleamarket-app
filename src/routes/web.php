@@ -19,4 +19,3 @@ Route::get('/', [ItemController::class, 'index']);
 
 Route::get('/item/{product}', [ItemController::class, 'detail']);
 
-Route::get('/sarch', [ItemController::class, 'sarch']);
