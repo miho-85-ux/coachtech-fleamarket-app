@@ -9,14 +9,15 @@ use App\Models\Category;
 
 class ItemController extends Controller
 {
-    public function index() {
-        $products = Product::with('categories')->paginate(12);
+    public function index(Request $request) {
+        $query = Product::with('categories');
+        
+        if ($request->filled('name')) {
+            $query -> where('name', 'like', '%'. $request->name. '%');
+        }
+        $products = $query->paginate(12)->withQueryString();
+
         return view('index', compact('products'));
-    }
-
-    public function sarch(Request $request) {
-
-
     }
 
     public function detail($product) {
