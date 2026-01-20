@@ -1,17 +1,17 @@
 # coachtechフリマ  
 
 ## 環境構築  
-**Dockerビルド  
-1. 'git clone git@github.com:miho-85-ux/coachtech-fleamarket-app.git'  
-2. 'cd coachtech-fleamarket-app.git'  
+**Dockerビルド**  
+1. `git clone git@github.com:miho-85-ux/coachtech-fleamarket-app.git`  
+2. `cd coachtech-fleamarket-app.git`  
 3. DockerDesktopアプリを立ち上げる  
 ```bash  
 'docker-compose up -d --build'  
 ```  
 
-** Laravel環境構築  
-1. 'docker-compose exec php bash'  
-2. 'composer install'  
+**Laravel環境構築**
+1. `docker-compose exec php bash`  
+2. `composer install`  
 3. .env.exampleファイルから.envファイルをコピーする    
 ```bash  
 cp .env.example .env
@@ -55,6 +55,6 @@ php artisan storage:link
 # ER図添付  
  [ER図]
 
-<img src="">
+<img src=".drawio.png">
 
 
