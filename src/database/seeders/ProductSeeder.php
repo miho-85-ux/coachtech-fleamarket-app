@@ -23,6 +23,7 @@ class ProductSeeder extends Seeder
                 'description' => 'スタイリッシュなデザインのメンズ腕時計',
                 'image' => 'images/Armani+Mens+Clock.jpg',
                 'condition' => '良好',
+                'color' => 'シルバー',
                 'status' => 'selling',
             ],
             [
@@ -33,6 +34,7 @@ class ProductSeeder extends Seeder
                 'description' => '高速で信頼性の高いハードディスク',
                 'image' => 'images/HDD+Hard+Disk.jpg',
                 'condition' => '目立った傷や汚れなし',
+                'color' => 'ブラック',
                 'status' => 'selling',
             ],
             [
@@ -43,6 +45,7 @@ class ProductSeeder extends Seeder
                 'description' => '新鮮な玉ねぎ3束のセット',
                 'image' => 'images/iLoveIMG+d.jpg',
                 'condition' => 'やや傷や汚れあり',
+                'color' => '',
                 'status' => 'selling',
             ],
             [    
@@ -53,6 +56,7 @@ class ProductSeeder extends Seeder
                 'description' => 'クラシックなデザインの革靴',
                 'image' => 'images/Leather+Shoes+Product+Photo.jpg',
                 'condition' => '状態が悪い',
+                'color' => 'ブラック',
                 'status' => 'selling',
             ],
             [
@@ -63,6 +67,7 @@ class ProductSeeder extends Seeder
                 'description' => '高性能なノートパソコン',
                 'image' => 'images/Living+Room+Laptop.jpg',
                 'condition' => '良好',
+                'color' => 'シルバー',
                 'status' => 'selling',
             ],
             [   
@@ -73,6 +78,7 @@ class ProductSeeder extends Seeder
                 'description' => '高音質のレコーディング用マイク',
                 'image' => 'images/Music+Mic+4632231.jpg',
                 'condition' => '目立った傷や汚れなし',
+                'color' => 'シルバー',
                 'status' => 'selling',
             ],
             [
@@ -83,6 +89,7 @@ class ProductSeeder extends Seeder
                 'description' => 'おしゃれなショルダーバッグ',
                 'image' => 'images/Purse+fashion+pocket.jpg',
                 'condition' => 'やや傷や汚れあり',
+                'color' => 'レッド',
                 'status' => 'selling',
             ],
             [
@@ -93,6 +100,7 @@ class ProductSeeder extends Seeder
                 'description' => '使いやすいタンブラー',
                 'image' => 'images/Tumbler+souvenir.jpg',
                 'condition' => '状態が悪い',
+                'color' => 'ブラック',
                 'status' => 'selling',
             ],
             [
@@ -103,6 +111,7 @@ class ProductSeeder extends Seeder
                 'description' => '手動のコーヒーミル',
                 'image' => 'images/Waitress+with+Coffee+Grinder.jpg',
                 'condition' => '良好',
+                'color' => '',
                 'status' => 'selling',
             ],
             [
@@ -113,6 +122,7 @@ class ProductSeeder extends Seeder
                 'description' => '便利なメイクアップセット',
                 'image' => 'images/外出メイクアップセット.jpg',
                 'condition' => '目立った傷や汚れなし',
+                'color' => 'コーラル',
                 'status' => 'selling',
             ],
         ]);
