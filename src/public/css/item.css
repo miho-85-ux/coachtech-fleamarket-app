@@ -1,0 +1,95 @@
+.item-content {
+    width: 1512px;
+}
+
+.item-content__inner {
+    margin: 100px 20px;
+    display: flex;
+
+}
+
+.content-image {
+    width: 40%;
+    margin: 60px 80px;
+
+}
+
+.content-image img {
+    width: 100%;
+}
+
+.content-detail {
+    margin: 0 20px;
+
+}
+
+.detail__input--title {
+    border: none;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.detail__input--brand {
+    margin: 10px;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+.detail__input--price {
+    border: none;
+    font-size: 30px;
+    width: 15%;
+}
+
+.detail__logo {
+    display: flex;    
+}
+
+.detail__logo-item {
+    margin: 10px 30px;
+}
+
+.detail__logo-item--number {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+}
+
+.detail__button {
+    background-color: #FF5555;
+    text-align: center;
+}
+
+.procedure__button {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.detail__description {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.detail__item {
+    font-size: 24px;
+}
+
+.detail__input {
+    margin: 10px;
+    border: none;
+    width: 100%;
+    font-size: 24px;
+
+}
+
+.button__send {
+    background-color: #FF5555;
+    color: #ffffff;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    margin: 30px 0;
+}

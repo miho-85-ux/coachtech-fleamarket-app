@@ -16,12 +16,13 @@ class ItemController extends Controller
             $query -> where('name', 'like', '%'. $request->name. '%');
         }
         $products = $query->paginate(12)->withQueryString();
-
+            
         return view('index', compact('products'));
     }
+            
+    public function detail($id) {
+        $product = Product::with('categories')->find($id);
 
-    public function detail($product) {
-
-        return view('item');
+        return view('item', compact('product'));
     }
 }
