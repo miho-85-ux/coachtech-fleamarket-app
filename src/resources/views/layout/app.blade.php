@@ -13,7 +13,9 @@
         <div class="head">
             <div class="head-row">
                 <div>
-                    <img src="{{ asset('images/COACHTECHヘッダーロゴ.png') }}" alt="COACHTECHロゴ">
+                    <a href="/">
+                        <img src="{{ asset('images/COACHTECHヘッダーロゴ.png') }}" alt="COACHTECHロゴ">
+                    </a>
                 </div>
                 <form action="/" method="GET">
                     <input class="head-input" type="text" name="name" placeholder="なにをお探しですか" value="{{ request('name') }}">
@@ -21,13 +23,22 @@
                 <div class="head-items">
                     <nav>
                         <ul class="nav-lists">
+                            @guest
                             <li ><a class="nav-item" href="/login">ログイン</a></li>
+                            <li><a class="nav-item" href="/login">マイページ</a></li>
+                            <li><a class="item-sell" href="/login">出品</a></li>
+                            @endguest
+                            
+                            @auth
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button class="nav-item__logout" type="submit">ログアウト</button>    
+                            </form>
                             <li><a class="nav-item" href="/mypage">マイページ</a></li>
+                            <li><a class="item-sell" href="/sell">出品</a></li>
+                            @endauth
                         </ul>
                     </nav>
-                    <div>
-                        <a class="item-sell"  href="">出品</a>
-                    </div>
                 </div>
             </div>
         </div>

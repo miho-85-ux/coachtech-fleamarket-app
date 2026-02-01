@@ -11,6 +11,10 @@ class ItemController extends Controller
 {
     public function index(Request $request) {
         $query = Product::with('categories');
+
+        if (auth()->check() && auth()->user()->postal_code === null) {
+        return redirect('/mypage/profile');
+        }
         
         if ($request->filled('name')) {
             $query -> where('name', 'like', '%'. $request->name. '%');
@@ -25,4 +29,6 @@ class ItemController extends Controller
 
         return view('item', compact('product'));
     }
+
+
 }
