@@ -9,13 +9,15 @@
 }
 
 .content-image {
-    width: 40%;
-    margin: 60px 80px;
+    width: 600px;
+    height: 600px;
+    margin: 60px;
 
 }
 
 .content-image img {
-    width: 100%;
+    width: 600px;
+    height: 600px;
 }
 
 .content-detail {
