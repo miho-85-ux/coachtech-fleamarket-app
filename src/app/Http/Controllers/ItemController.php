@@ -20,6 +20,8 @@ class ItemController extends Controller
             $query -> where('name', 'like', '%'. $request->name. '%');
         }
         $products = $query->paginate(12)->withQueryString();
+
+        $products = Product::withCount('likes')->orderBy('likes_count', 'desc')->get();
             
         return view('index', compact('products'));
     }
