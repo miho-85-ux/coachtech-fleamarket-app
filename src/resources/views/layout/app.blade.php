@@ -22,21 +22,17 @@
                 </form>
                 <div class="head-items">
                     <nav>
-                        <ul class="nav-lists">
-                            @guest
-                            <li ><a class="nav-item" href="/login">ログイン</a></li>
-                            <li><a class="nav-item" href="/login">マイページ</a></li>
-                            <li><a class="item-sell" href="/login">出品</a></li>
-                            @endguest
-                            
-                            @auth
+                        <ul class="nav-lists">                            
+                            @if (Auth::check())
                             <form action="/logout" method="POST">
                                 @csrf
                                 <button class="nav-item__logout" type="submit">ログアウト</button>    
                             </form>
+                            @else
+                            <li ><a class="nav-item" href="/login">ログイン</a></li>
+                            @endif
                             <li><a class="nav-item" href="/mypage">マイページ</a></li>
-                            <li><a class="item-sell" href="/sell">出品</a></li>
-                            @endauth
+                            <li><a class="item-sell" href="/sell">出品</a></li>                          
                         </ul>
                     </nav>
                 </div>

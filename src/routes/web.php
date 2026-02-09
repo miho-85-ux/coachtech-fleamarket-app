@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LikeController;
 
 
 /*
@@ -20,11 +22,17 @@ Route::get('/', [ItemController::class, 'index']);
 
 Route::get('/item/{product}', [ItemController::class, 'detail']);
 
+Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
+
+Route::get('/register', [AuthController::class, 'registerForm'])->name('register');
+
+
 Route::middleware('auth')->group(function() 
 {
     Route::get('/mypage', [MypageController::class, 'index']);
     Route::get('/mypage/profile', [MypageController::class, 'edit']);
     Route::post('/mypage/profile', [MypageController::class, 'update']);
+    Route::post('/products/{product}/like', [LikeController::class, 'toggle']);
 
 });
 

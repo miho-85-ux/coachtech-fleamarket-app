@@ -13,6 +13,8 @@ class MypageController extends Controller
     public function index( ) {
         $query = Product::with('categories');
         $products = $query->paginate(12)->withQueryString();
+        $products = auth()->user()->likedProducts;
+       
 
         return view('mypage.index', compact('products'));
     }
@@ -21,7 +23,7 @@ class MypageController extends Controller
         return view('mypage.profile');
     }
 
-    public function update(Request $request) {
+    public function update(ProfileRequest $request) {
        $user = Auth::user();
 
        if ($request->hasfile('profile_image')) {
