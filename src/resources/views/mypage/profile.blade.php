@@ -16,34 +16,34 @@
                     画像を選択する
                     <input type="file" name="profile_image" hidden onchange="previewImage(this)" >
                 </label>
-                @error('profile_image')
-                    <p class="error">{{ $message }}</p>
-                @enderror
             </div>
+            @error('profile_image')
+                <p class="error">{{ $message }}</p>
+            @enderror
             <div class="content-items">
                 <label for="name">ユーザー名</label>
-                <input class="content-items__input" type="text" name="name" id="name" value="{{ auth()->user()->name }}">
+                <input class="content-items__input" type="text" name="name" id="name" value="{{ old('name', auth()->user()->name) }}">
                 @error('name')
                     <p class="error">{{ $message }}</p>
                 @enderror
             </div>
             <div class="content-items">
                 <label for="postal_code">郵便番号</label>
-                <input class="content-items__input" type="text" name="postal_code" id="postal_code" value="{{ auth()->user()->postal_code }}">
+                <input class="content-items__input" type="text" name="postal_code" id="postal_code" value="{{ old('postal_code', auth()->user()->postal_code) }}">
                 @error('postal_code')
                     <p class="error">{{ $message }}</p>
                 @enderror
             </div>
             <div class="content-items">
                 <label for="address">住所</label>
-                <input class="content-items__input" type="text" name="address" id="address" value="{{ auth()->user()->address }}">
+                <input class="content-items__input" type="text" name="address" id="address" value="{{ old('address', auth()->user()->address) }}">
                 @error('address')
                     <p class="error">{{ $message }}</p>
                 @enderror
             </div>
             <div class="content-items">
                 <label for="building">建物名</label>
-                <input class="content-items__input" type="text" name="building" id="building" value="{{ auth()->user()->building }}">
+                <input class="content-items__input" type="text" name="building" id="building" value="{{ old('building', auth()->user()->building) }}">
             </div>
             <div>
                 <button class="content-items__button"  type="submit">更新する</button>

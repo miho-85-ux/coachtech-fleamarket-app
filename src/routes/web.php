@@ -5,6 +5,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\CommentController;
 
 
 /*
@@ -33,6 +34,7 @@ Route::middleware('auth')->group(function()
     Route::get('/mypage/profile', [MypageController::class, 'edit']);
     Route::post('/mypage/profile', [MypageController::class, 'update']);
     Route::post('/products/{product}/like', [LikeController::class, 'toggle']);
+    Route::post('/products/{product}/comment', [CommentController::class, 'store']);
 
 });
 

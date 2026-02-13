@@ -28,7 +28,7 @@
                     </button>
                     <div class="detail__logo-item">
                         <img src="{{ asset('images/ふきだしロゴ.png') }}" alt="ふきだしロゴ">
-                        <p class="detail__logo-item--number">{{ $product->likes->count() }}</p>
+                        <p class="detail__logo-item--number">{{ $product->comments->count() }}</p>
                     </div>
                     @endauth
 
@@ -39,7 +39,7 @@
                     </a>
                     <a href="/login" class="detail__logo-item">
                         <img src="{{ asset('images/ふきだしロゴ.png') }}" alt="ふきだしロゴ">
-                        <p class="detail__logo-item--number">{{ $product->likes->count() }}</p>
+                        <p class="detail__logo-item--number">{{ $product->comments->count() }}</p>
                     </a>
                     @endguest
 
@@ -61,26 +61,47 @@
                 <p class="detail__item">商品の状態 <input class="detail__input" tupe="text" name="condition" value="{{ $product->condition }}"></p>
             </div>
             <div>
-                @auth
-                <form action="">
-                    <p class="detail__description">コメント</p>
+                <form action="/products/{{ $product->id }}/comment" method="POST">
+                    @csrf 
+                    <p class="detail__description">コメント (  {{ $product->comments->count() }}  ) </p>
+                    @auth
                     <div>
-                        <img class="auth__image" src="{{ asset('storage/' . auth()->user()->profile_image) }}" alt="プロフィール画像">
-                        <input class="auth__input" type="text" name="name" value="{{ auth()->user()->name }}">
-                        <div>
-                            <input type="text" name="" value="">
+                        @foreach ($product->comments as $comment)
+                        <div class="user__profile">
+                            <img class="auth__image" src="{{ asset('storage/' . $comment->user->profile_image) }}" alt="プロフィール画像">
+                            <p>{{ $comment->user->name }}</p>
                         </div>
+                        <p class="user__comment">{{ $comment->content }}</p>
+                        @endforeach
                     </div>
                     <div>
                         <p class="comment__title">商品へのコメント</p>
-                        <textarea class="comment__textarea" name="" id="" cols="100" rows="10"></textarea>
-                        <button class="button__send" type="submit" name="">コメントを送信する</button>
+                        <textarea class="comment__textarea" name="content" id="" cols="100" rows="10"></textarea>
                     </div>
+                    @endauth
+                    
+                    @guest
+                    <div>
+                        @foreach ($product->comments as $comment)
+                        <div class="user__profile">
+                            <img class="auth__image"  src="{{ asset('storage/'. $comment->user->profile_image) }}" alt="プロフィール画像">
+                            <p>{{ $comment->user->name }}</p>
+                        </div>
+                        <p class="user__comment">{{ $comment->content }}</p>
+                        @endforeach
+                    </div>
+                    <a class="comment__not-login" href="/login">
+                        <p class="comment__title">商品へのコメント</p>
+                        <textarea class="comment__textarea" name="content" id="" cols="100" rows="10"></textarea>
+                    </a>
+                    @endguest
+                    
+                    @error('content')
+                    <p class="error">{{ $message }}</p>
+                    @enderror
+                    
+                    <button class="button__send" type="submit">コメントを送信する</button>
                 </form>
-                @endauth
-                @guest
-
-                @endguest
             </div>
         </div>
     </div>
