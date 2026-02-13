@@ -25,6 +25,10 @@
     color: #5F5F5F;
 }
 
+.item__mylist.active {
+    color: #FF0000;
+}
+
 .card-items {
     margin: 0 auto;
     padding: 10px;

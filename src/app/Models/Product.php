@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
     protected $fillable = ['name','price','brand','description','image','condition','color','status'];
 
-    public function Categories() 
+    public function categories() 
     {
         return $this->belongsToMany(Category::class, 'product_category');
     }
@@ -19,10 +19,14 @@ class Product extends Model
     {
         return $this->hasMany(Like::class);
     }
-
+    
     public function likedUsers()
     {
         return $this->belongsToMany(User::class, 'likes');
     }
-
+        
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

@@ -7,8 +7,16 @@
 @section('content')
 <div class="content">
     <div class="content-items">
-        <p class="item"><a class="item__mylist" href="/">おすすめ</a></p>
-        <p class="item"><a class="item__mylist" href="">マイリスト</a></p>
+        <p class="item">
+            <a href="/?&name={{ request('name') }}" class="item__mylist {{ request('tab') !== 'mylist' ? 'active' : '' }}" >
+                おすすめ
+            </a>
+        </p>
+        <p class="item">
+            <a href="/?tab=mylist&name={{ request('name') }}" class="item__mylist {{ request('tab') === 'mylist' ? 'active' : '' }}"  >
+                マイリスト
+            </a>
+        </p>
     </div>
     <div class="card-items">
         @foreach ($products as $product)

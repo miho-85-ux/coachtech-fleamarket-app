@@ -119,6 +119,25 @@
     padding: 10px;
 }
 
+.comment__not-login {
+    text-decoration: none;
+    color: #000000;
+}
+
+.user__profile {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+.user__comment {
+    font-size: 20px;
+    color: #000000;
+}
+
 .button__send {
     background-color: #FF5555;
     color: #ffffff;
@@ -128,4 +147,9 @@
     font-weight: bold;
     border: none;
     margin: 30px 0;
+}
+
+.error {
+    color: #FF5555;
+    font-size: 24px;
 }
