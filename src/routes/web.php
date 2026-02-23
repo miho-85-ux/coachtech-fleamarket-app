@@ -6,6 +6,7 @@ use App\Http\Controllers\MypageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\SellController;
 
 
 /*
@@ -35,6 +36,8 @@ Route::middleware('auth')->group(function()
     Route::post('/mypage/profile', [MypageController::class, 'update']);
     Route::post('/products/{product}/like', [LikeController::class, 'toggle']);
     Route::post('/products/{product}/comment', [CommentController::class, 'store']);
-
+    Route::get('/sell', [SellController::class, 'index']);
+    Route::post('/sell', [SellController::class, 'store']);
+    
 });
 

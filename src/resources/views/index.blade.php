@@ -25,6 +25,9 @@
                 <img class="card-img" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
             </div>
             <p class="card-name">{{ $product->name }}</p>
+            @if($product->status === 'SOLD')
+                <span class="sold-label">sold</span>
+            @endif
         </a>
         @endforeach
     </div>

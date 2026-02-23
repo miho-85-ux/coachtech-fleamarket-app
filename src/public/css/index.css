@@ -1,6 +1,6 @@
 .content {
     margin: 0 auto;
-    width: 1520px;
+    width: 1512px;
     height: 750px;
 }
 
@@ -53,4 +53,10 @@
     font-size: 25px;
     padding: 0 5px;
     margin: 10px auto;
+}
+
+.sold-label {
+    color: red;
+    font-weight: bold;
+    margin-left: 8px;
 }
