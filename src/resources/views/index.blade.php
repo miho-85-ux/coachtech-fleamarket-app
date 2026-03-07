@@ -11,6 +11,12 @@
     {{ session('message')}}
 </div>
 @endif
+@if(session('purchase_success'))
+<div class="alert-success__purchase">
+    {{ session('purchase_success')}}
+</div>
+@endif
+
 
 <div class="content">
     <div class="content-items">

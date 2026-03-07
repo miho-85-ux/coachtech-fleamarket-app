@@ -15,14 +15,16 @@
                 </div>
                 <div>
                     <p class="content__product-name">{{ $product->name }}</p>
-                    <p class="content__product-price">￥{{ $product->price }}</p>
+                    <p class="content__product-price">￥{{ number_format($product->price) }}</p>
                 </div>
             </div>
             <div class="purchase-content__items">
                 <p class="content__item">支払方法</p>
                 <div class="purchase-items__select">
                     <select class="input__select" name="payment_method" id="payment_method">
-                        <option class="select__option" value="" selected disabled>選択してください</option>
+                        <option class="select__option" value="" selected disabled>
+                            選択してください
+                        </option>
                         <option class="select__option" value="1">
                             コンビニ支払い
                         </option>
@@ -58,7 +60,7 @@
             <table class="purchase-congtent__table">
                 <tr class="table__inner">
                     <th class="table__title">商品代金</th>
-                    <td class="table__item">￥{{ $product->price }}</td>
+                    <td class="table__item">￥{{ number_format($product->price) }}</td>
                 </tr>
                 <tr>
                     <th class="table__title">支払方法</th>

@@ -68,3 +68,10 @@
     color: rgba(66, 198, 238, 0.766);
     margin: 0 50px;
 }
+
+.alert-success__purchase {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(238, 66, 66, 0.766);
+    margin: 0 50px;
+}
