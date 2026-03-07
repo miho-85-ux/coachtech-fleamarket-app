@@ -42,11 +42,33 @@ php artisan db:seed
 php artisan storage:link 
 ```  
 
+**Mailtrap**  
+1. Mailtrapのアカウントを作る  
+```bash  
+https://mailtrap.io  
+```
+2. SandboxのCredentialsを.envに設定  
+```text  
+MAIL_MAILER=smtp
+MAIL_HOST=your-smtp-host
+MAIL_PORT=2525
+MAIL_USERNAME=your-username
+MAIL_PASSWORD=your-password
+MAIL_ENCRYPTION=tls
+```
+3. キャッシュをクリア
+```bash
+php artisan config:clear
+```
+4. メールを確認
+
+
 ## 使用技術 
 * PHP:8.1.33 
 * Lravel:8.83.8 
 * MySQL:8.0.26 
 * nginx:1.21.1 
+* MailTrap
 
 # 開発環境 
 * 商品一覧:http://localhost/  

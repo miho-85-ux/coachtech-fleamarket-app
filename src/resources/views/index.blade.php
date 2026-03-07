@@ -5,6 +5,13 @@
 @endsection
 
 @section('content')
+
+@if(session('message'))
+<div class="alert-success">
+    {{ session('message')}}
+</div>
+@endif
+
 <div class="content">
     <div class="content-items">
         <p class="item">
@@ -25,7 +32,7 @@
                 <img class="card-img" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
             </div>
             <p class="card-name">{{ $product->name }}</p>
-            @if($product->status === 'SOLD')
+            @if($product->order)
                 <span class="sold-label">sold</span>
             @endif
         </a>

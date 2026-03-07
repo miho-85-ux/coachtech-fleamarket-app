@@ -13,7 +13,7 @@ class CommentController extends Controller
     public function store(CommentRequest $request, Product $product) {
         Comment :: create([
             'user_id' => auth()->id(),
-            'product_id' => $product_id,
+            'product_id' => $product->id,
             'content' => $request->content,
         ]);
         

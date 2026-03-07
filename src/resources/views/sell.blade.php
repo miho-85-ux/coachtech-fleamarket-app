@@ -28,7 +28,9 @@
                         <p class="detail-item">カテゴリー</p>
                         <div class="detail__category">
                             @foreach ($categories as $category)
-                            <input type="checkbox" name="categories[]" value="{{ $category->id }}"  id="category{{ $category->id }}" class="category-checkbox"  hidden >
+                            <input type="checkbox" name="categories[]" value="{{ $category->id }}" 
+                            {{ in_array(($category->id), old('categories', [])) ? 'checked' : '' }} 
+                            id="category{{ $category->id }}" class="category-checkbox"  hidden >
                             <label class="category-button" for="category{{ $category->id }}">
                                 {{ $category -> name }}
                             </label>
@@ -43,10 +45,10 @@
                         <div class="detail-items__select">
                             <select class="input__select" name="condition" >
                                 <option class="input__select--option" value="" selected disabled >選択してください</option>
-                                <option class="input__select--option" value="良好">良好</option>
-                                <option class="input__select--option"value="目立った傷や汚れなし">目立った傷や汚れなし</option>
-                                <option class="input__select--option"value="やや傷や汚れあり">やや傷や汚れあり</option>
-                                <option class="input__select--option"value="状態が悪い">状態が悪い</option>
+                                <option class="input__select--option" value="良好" {{ old('condition') == '良好' ? 'selected' : '' }}>良好</option>
+                                <option class="input__select--option"value="目立った傷や汚れなし" {{ old('condition') == '目立った傷や汚れなし' ? 'selected' : '' }}>目立った傷や汚れなし</option>
+                                <option class="input__select--option"value="やや傷や汚れあり" {{ old('condition') == 'やや傷や汚れあり' ? 'selected' : '' }}>やや傷や汚れあり</option>
+                                <option class="input__select--option"value="状態が悪い" {{ old('condition') == '状態が悪い' ? 'selected' : '' }}>状態が悪い</option>
                             </select>
                         </div>
                     </div>                    

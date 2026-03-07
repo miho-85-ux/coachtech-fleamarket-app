@@ -13,19 +13,33 @@
             <a class="profile-button" href="/mypage/profile">プロフィールを編集</a>
         </div>
         <div class="content__select">
-            <div class="content__left-select">出品した商品</div>
-            <div >購入した商品</div>
+            <a class="content__left-select {{ $page === 'sell' ? 'active' : '' }}" href="/mypage?page=sell" >出品した商品</a>
+            <a class="content__right-select {{ $page === 'buy' ? 'active' : '' }}" href="/mypage?page=buy">購入した商品</a>
         </div>
     </div>
-    <div class="content-card">
-        @foreach ($products as $product)
-        <a class="card" href="/item/{{ $product->id }}">
-            <div class="card__inner">
-                <img class="card-img" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-            </div>
-            <p class="card-name">{{ $product->name }}</p>
-        </a>
-        @endforeach
+    <div>
+        <div class="content-card">
+            @if($page === 'sell')
+                @foreach ($products as $product)
+                <a class="card" href="/item/{{ $product->id }}">
+                    <div class="card__inner">
+                        <img class="card-img" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                        <p class="card-name">{{ $product->name }}</p>
+                    </div>
+                </a>
+                @endforeach
+            @else
+                @foreach($orders as $order)
+                <a class="card" href="/item/{{ $order->product->id }}">
+                    <div class="card__inner">
+                        <img class="card-img" src="{{ asset('storage/' . $order->product->image) }}" alt="{{ $order->product->name }}">
+                        <p class="card-name"> {{ $order->product->name }}</p>
+                    </div>
+                </a>
+                @endforeach
+            @endif
+        </div>
+           
     </div>
 </div>
 @endsection

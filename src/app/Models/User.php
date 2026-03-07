@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
@@ -58,10 +58,15 @@ class User extends Authenticatable
     {
         return $this -> hasMany(Comment::class);
     }
-
+    
     public function products()
     {
         return $this->hasMany(Product::class, 'seller_id');
     }
-}
 
+    public function Oders()
+    {
+        return $this -> hasMany(Oder::class);
+    }
+}
+        

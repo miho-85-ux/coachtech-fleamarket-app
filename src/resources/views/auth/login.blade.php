@@ -19,7 +19,7 @@
             </div>
             <div class="content-items">
                 <label for="password">パスワード</label>
-                <input class="content-items__input" type="text" name="password" id="password" >
+                <input class="content-items__input" type="password" name="password" id="password" >
                 @error('password')
                     <p class="error">{{ $message }}</p>
                 @enderror

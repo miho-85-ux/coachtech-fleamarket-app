@@ -12,9 +12,11 @@
         </div>
         <div class="content-detail">
             <div>
-                <input class="detail__input--title" type="name" name="name" value="{{ $product->name }}">
-                <input class="detail__input--brand"  type="text" name="brand" value="{{ $product->brand }}">
-                <p>￥<input class="detail__input--price" type="text" name="price" value="{{ $product->price }}" >（税込）</p>
+                <div class="detail__title">{{ $product->name }}</div>
+                <div class="detail__brand">{{ $product->brand }}</div>
+                <div class="content-detail__items">
+                    <p class="detail__price">￥<span class="detail__price--span">{{ $product->price }}</span>(税込)</p>
+                </div>
                 <form class="detail__logo" action="/products/{{ $product->id }}/like" method="POST">
                     @csrf 
                     @auth
@@ -46,19 +48,25 @@
                 </form>
             </div>
             <div class="detail__button">
-                <a class="procedure__button"href="">購入手続きへ</a>
+                <a class="procedure__button" href="/purchase/{{ $product->id }}">購入手続きへ</a>
             </div>
             <div>
                 <p class="detail__description">商品説明</p>
-                <label class="detail__item">カラー:<input class="detail__input" type="text" name="color" value="{{ $product->color }}"></label>
-                <p>
-                    <input class="detail__input" type="text" name="description" value="{{ $product->description }}">
-                </p>
+                <div class="detail__item">カラー:{{ $product->color }}</div>
+                <p class="detail__item">{{ $product->description }}</p>
             </div>
             <div>
                 <p class="detail__description">商品の情報</p>
-                <p class="detail__item">カテゴリー<input class="detail__input" type="text" name="" valie=""></p>
-                <p class="detail__item">商品の状態 <input class="detail__input" tupe="text" name="condition" value="{{ $product->condition }}"></p>
+                <div class="detail__category">
+                    <p class="detail__item">カテゴリー</p>
+                    @foreach ($product->categories as $category)
+                    <span class="category">{{ $category->name }}</span>
+                    @endforeach
+                </div>
+                <div class="detail__condition">
+                    <p class="detail__item">商品の状態 
+                    <p class="detail__condition--product-description">{{ $product->condition }}</p>
+                </div>
             </div>
             <div>
                 <form action="/products/{{ $product->id }}/comment" method="POST">
@@ -76,7 +84,7 @@
                     </div>
                     <div>
                         <p class="comment__title">商品へのコメント</p>
-                        <textarea class="comment__textarea" name="content" id="" cols="100" rows="10"></textarea>
+                        <textarea class="comment__textarea" name="content" cols="100" rows="10"></textarea>
                     </div>
                     @endauth
                     
@@ -92,7 +100,7 @@
                     </div>
                     <a class="comment__not-login" href="/login">
                         <p class="comment__title">商品へのコメント</p>
-                        <textarea class="comment__textarea" name="content" id="" cols="100" rows="10"></textarea>
+                        <textarea class="comment__textarea" name="content" cols="100" rows="10"></textarea>
                     </a>
                     @endguest
                     

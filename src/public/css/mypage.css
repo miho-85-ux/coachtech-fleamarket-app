@@ -44,11 +44,19 @@
 .content__select {
     display: flex;
     font-size: 24px;
+    font-weight: bold;
     border-bottom: 2px solid #5F5F5F;
 }
 
 .content__left-select {
     margin: 0 100px 0 150px;
+    text-decoration: none;
+    color: #5F5F5F;
+}
+
+.content__right-select {
+    text-decoration: none;
+    color: #5F5F5F;
 }
 
 .content-card {
@@ -75,4 +83,8 @@
     font-size: 25px;
     padding: 0 5px;
     margin: 10px auto;
+}
+
+.active {
+    color: #FF0000;
 }

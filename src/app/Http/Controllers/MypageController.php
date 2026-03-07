@@ -7,16 +7,16 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProfileRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Order;
 
 class MypageController extends Controller
 {
-    public function index( ) {
-        $query = Product::with('categories');
-        $products = $query->paginate(12)->withQueryString();
-        $products = auth()->user()->likedProducts;
-       
+    public function index(Request $request) {
+        $products = Product::where('seller_id', auth()->id())->get();
+        $orders = Order::where('buyer_id', auth()->id())->get();
+        $page = $request->input('page','sell');
 
-        return view('mypage.index', compact('products'));
+        return view('mypage.index', compact('products','orders','page'));
     }
 
     public function edit( ) {

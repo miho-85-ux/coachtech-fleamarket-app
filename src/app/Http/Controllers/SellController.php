@@ -24,8 +24,12 @@ class SellController extends Controller
         }
             
         $data['status'] = '販売中';
-        auth()->user()->products()->create($data);
 
-       return redirect('/');
+        $product = auth()->user()->products()->create($data);
+        
+        $product->categories()->sync($request->categories ?? []);
+
+       return redirect('/')->with('message', '商品を出品いたしました');
     }
+
 }

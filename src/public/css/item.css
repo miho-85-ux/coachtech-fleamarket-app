@@ -22,26 +22,33 @@
 
 .content-detail {
     margin: 0 20px;
-
 }
 
-.detail__input--title {
+.content-detail__items {
+    display: flex;
+}
+
+.detail__title {
     border: none;
     font-size: 45px;
     font-weight: bold;
 }
 
-.detail__input--brand {
+.detail__brand {
     margin: 10px;
     border: none;
     width: 100%;
     font-size: 20px;
 }
 
-.detail__input--price {
+.detail__price {
     border: none;
     font-size: 30px;
-    width: 15%;
+    width: 570px;
+}
+
+.detail__price--span{
+    font-size: 45px;
 }
 
 .detail__logo {
@@ -86,12 +93,29 @@
     font-size: 24px;
 }
 
-.detail__input {
-    margin: 10px;
-    border: none;
-    width: 100%;
-    font-size: 24px;
-    
+.detail__category {
+    display: flex;
+    align-items: center;
+}
+
+.category {
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 35px;
+    padding: 0 15px;
+}
+
+.detail__condition {
+    display: flex;
+    align-items: center;
+}
+
+.detail__condition--product-description {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 50px;
 }
 
 .auth__image {
