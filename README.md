@@ -6,7 +6,7 @@
 2. `cd coachtech-fleamarket-app.git`  
 3. DockerDesktopアプリを立ち上げる  
 ```bash  
-'docker-compose up -d --build'  
+docker-compose up -d --build  
 ```  
 
 **Laravel環境構築**
@@ -63,20 +63,66 @@ php artisan config:clear
 4. メールを確認
 
 
+**支払い方法** 
+・コンビニ支払い  
+・カード支払い（Stripe）
+
+カード決済のテストには以下のテストカードを使用してください。
+```bash
+カード番号  
+4242 4242 4242 4242
+
+有効期限  
+任意の未来日(例：12/34)  
+
+CVC  
+任意の3桁　（例：123）  
+```
+※Stripeはテストモードで動作しています。
+実際の決済は行われません。
+
+**備考**  
+* 今回のテストデータは2つあります。
+    * テストデータ1  商品を出品しており、商品一覧が見れません。
+    * テストデータ2  テストデータ2を使って、ログインしてください。  
+
+* ログインする際、以下のログインパスワードでログインしてください。　
+    * テストデータ1  
+        メールアドレス　　
+        ```bash  
+        test1@example.com  
+        ```
+        パスワード　
+        ```bash  
+        password  
+        ```
+    * テストデータ2  
+        メールアドレス  
+        ```bash
+        test2@example.com  
+        ```
+        パスワード  
+        ```bash
+        password  
+        ```
+  
+
+
+
 ## 使用技術 
 * PHP:8.1.33 
 * Lravel:8.83.8 
 * MySQL:8.0.26 
 * nginx:1.21.1 
 * MailTrap
+* Stripe  
 
 # 開発環境 
 * 商品一覧:http://localhost/  
-* phpmyadmin:http://localhost:8080
+* phpmyadmin:http://localhost:8080  
+* MailTrap:https://mailtrap.io  
 
 # ER図添付  
- [ER図]
-
-<img src=".drawio.png">
+ [ER図]<img src=".drawio.png">
 
 
