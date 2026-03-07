@@ -18,7 +18,7 @@
                     </a>
                 </div>
                 <form action="/" method="GET">
-                    <input class="head-input" type="text" name="name" placeholder="なにをお探しですか" value="{{ request('name') }}">
+                    <input class="head-input" type="text" name="name" placeholder="なにをお探しですか？" value="{{ request('name') }}">
                     <input type="hidden" name="tab" value="{{ request('tab') }}">
                 </form>
                 <div class="head-items">

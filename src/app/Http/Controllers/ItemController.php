@@ -12,10 +12,6 @@ class ItemController extends Controller
     public function index(Request $request) {
         $query = Product::with('categories');
 
-        if (auth()->check() && auth()->user()->postal_code === null) {
-            return redirect('/mypage/profile');
-        }
-
         $tab = $request->input('tab');
 
         if ($tab === 'mylist') {
@@ -26,6 +22,10 @@ class ItemController extends Controller
             }
         } else {
             $query = Product::query();
+        }
+
+        if (auth()->check()) {
+            $query->where('seller_id', '!=', auth()->id());
         }
 
         $query->where('status', '!=', 'sold')->withCount('likes')->orderByDesc('likes_count');
@@ -39,8 +39,8 @@ class ItemController extends Controller
         return view('index', compact('products'));
     }
             
-    public function detail($id) {
-        $product = Product::with('categories')->find($id);
+    public function detail($item) {
+        $product = Product::with('categories')->find($item);
 
         return view('item', compact('product'));
     }
