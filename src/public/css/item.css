@@ -1,0 +1,179 @@
+.item-content {
+    width: 1512px;
+}
+
+.item-content__inner {
+    margin: 100px 20px;
+    display: flex;
+
+}
+
+.content-image {
+    width: 600px;
+    height: 600px;
+    margin: 60px;
+
+}
+
+.content-image img {
+    width: 600px;
+    height: 600px;
+}
+
+.content-detail {
+    margin: 0 20px;
+}
+
+.content-detail__items {
+    display: flex;
+}
+
+.detail__title {
+    border: none;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.detail__brand {
+    margin: 10px;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+.detail__price {
+    border: none;
+    font-size: 30px;
+    width: 570px;
+}
+
+.detail__price--span{
+    font-size: 45px;
+}
+
+.detail__logo {
+    display: flex;    
+}
+
+.detail__logo-item {
+    margin: 10px 30px;
+    border: none;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+
+.detail__logo-item--number {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+}
+
+.detail__button {
+    background-color: #FF5555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 570px;
+    height: 56px;
+}
+
+.procedure__button {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.detail__description {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.detail__item {
+    font-size: 24px;
+}
+
+.detail__category {
+    display: flex;
+    align-items: center;
+}
+
+.category {
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 35px;
+    padding: 0 15px;
+}
+
+.detail__condition {
+    display: flex;
+    align-items: center;
+}
+
+.detail__condition--product-description {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 50px;
+}
+
+.auth__image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.auth__input {
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.comment__title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.comment__textarea {
+    width: 570px;
+    height: 246px;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.comment__not-login {
+    text-decoration: none;
+    color: #000000;
+}
+
+.user__profile {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+.user__comment {
+    font-size: 20px;
+    color: #000000;
+}
+
+.button__send {
+    background-color: #FF5555;
+    color: #ffffff;
+    width: 570px;
+    height: 56px;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    margin: 30px 0;
+}
+
+.error {
+    color: #FF5555;
+    font-size: 24px;
+}
