@@ -11,7 +11,7 @@
             <p>登録していただいたメールアドレスに認証メールを送付しました。<br />メール認証を完了してください。</p>
         </div>
         <div class="verify-email__button">
-            <a href="https://mailtrap.io/inboxes/4422439/messages" target="_blank" class="verify-button">認証はこちら</a>
+            <a href="https://mailtrap.io/inboxes" target="_blank" class="verify-button">認証はこちら</a>
         </div>
         <form action="/email/verification-notification" method="POST">
             @csrf 
