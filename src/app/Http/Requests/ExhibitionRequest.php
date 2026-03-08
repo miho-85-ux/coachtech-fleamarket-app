@@ -21,7 +21,14 @@ class ExhibitionRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'price' => str_replace(',', '', $this->price),
+        ]);
+    }
+
+    public function rules(): array
     {
         return [
             'name' => ['required', 'string'],

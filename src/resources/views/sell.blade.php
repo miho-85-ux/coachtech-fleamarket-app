@@ -79,7 +79,7 @@
                             <label class="detail-item" for="price">販売価格</label>
                             <div class="detail-item__price">
                                 <span>￥</span>
-                                <input class="input"  type="text" name="price" id="price" value="{{ old('price') }}">
+                                <input class="input"  type="text" name="price" id="price" value="{{ old('price') }}" oninput="formatPrice(this)">
                             </div>
                         </div>
                         @error('price')
@@ -105,6 +105,12 @@
 
                     reader.readAsDataURL(input.files[0]);
                 }
+            }
+        </script>
+        <script>
+            function formatPrice(input) {
+                let value = input.value.replace(/[^0-9]/g, '');
+                input.value = value.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
             }
         </script>
     </div>
